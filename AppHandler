@@ -1,0 +1,9 @@
+package ACP;
+
+import java.util.HashMap;
+
+public interface AppHandler {
+
+    void handleIt(HashMap data) ;
+
+}
