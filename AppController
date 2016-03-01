@@ -1,0 +1,30 @@
+package ACP;
+
+import java.util.*;
+
+public class AppController {
+
+    //make private
+    private  HashMap<String,AppHandler> hashMapOfCommands = new HashMap<String,AppHandler>();
+
+
+    public AppController(){
+
+        hashMapOfCommands.put("chevy",         new ChevyHandler());
+        hashMapOfCommands.put("dodge",         new DodgeHandler());
+        hashMapOfCommands.put("ford",          new FordHandler());
+        hashMapOfCommands.put("toyota",        new ToyotaHandler());
+        hashMapOfCommands.put("nissan",        new NissanHandler());
+        hashMapOfCommands.put("international", new InternationalHandler());
+
+    }
+
+    public  void handleCommand(String make,HashMap data)  {
+
+        AppHandler handler = hashMapOfCommands.get(make);
+        handler.handleIt(data);
+
+
+
+    }
+}
