@@ -1,0 +1,37 @@
+package ACP;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class AppMain {
+
+    public static void main(String[] args) {
+
+        AppController delegate = new AppController();
+        Scanner input = new Scanner(System.in);
+
+        try {
+
+            System.out.println("---What's your Truck Make---");
+            System.out.println("Chevy");
+            System.out.println("Dodge");
+            System.out.println("Ford");
+            System.out.println("Toyota");
+            System.out.println("Nissan");
+            System.out.println("International");
+            System.out.println("**********************************");
+            System.out.print("Enter make here: ");
+            String make = input.nextLine();
+            String newMake = make.toLowerCase();
+
+            HashMap data = new HashMap();
+            data.put("newMake", newMake);
+
+            delegate.handleCommand(newMake, data);
+
+        } catch (Exception e) {
+            System.out.println("Sorry. Your vehicle does not exist in our database.");
+        }
+
+    }
+}
