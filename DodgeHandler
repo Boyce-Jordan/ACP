@@ -1,0 +1,24 @@
+package ACP;
+
+import ACP.AppHandler;
+
+import java.util.HashMap;
+
+public class DodgeHandler implements AppHandler {
+
+    @Override
+    public void handleIt(HashMap data)  {
+
+        try {
+            System.out.println("You have chosen Dodge!");
+            System.out.println("Good Choice!");
+            System.out.println("The first Dodge was made in 1914.");
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+    }
+}
+
